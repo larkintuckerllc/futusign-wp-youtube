@@ -1,4 +1,4 @@
-=== futusign-youtube  ===
+=== futusignz-youtube  ===
 Contributors: sckmkny
 Tags: digital, signage, youtube
 Requires at least: 4.3

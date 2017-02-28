@@ -24,7 +24,12 @@ class Futusign_Youtube {
 	 * @var      string    $plugin    Indicates which plugin(s) to check for.
 	 */
 	public static function is_plugin_active( $plugin ) {
-		return true;
+		if ( 'futusign' == $plugin ) {
+			return class_exists( 'Futusign' );
+		} elseif ( 'all' == $plugin ) {
+			return class_exists( 'WP_REST_Controller' ) && class_exists( 'acf' ) && class_exists( 'ACF_TO_REST_API' ) && class_exists( 'Futusign' );
+		}
+		return false;
 	}
 	/**
 	 * Static function to determine if dependant plugin(s) are installed
@@ -33,7 +38,24 @@ class Futusign_Youtube {
 	 * @var      string    $plugin    Indicates which plugin(s) to check for.
 	 */
 	public static function is_plugin_installed( $plugin ) {
-		return true;
+		if ( ! function_exists( 'get_plugins' ) ) {
+			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		}
+		$paths = false;
+		if ( 'futusign' == $plugin ) {
+			$paths = array( 'futusign/class-futusign.php' );
+		}
+		if ( $paths ) {
+			$plugins = get_plugins();
+			if ( is_array( $plugins ) && count( $plugins ) > 0 ) {
+				foreach ( $paths as $path ) {
+					if ( isset( $plugins[$path] ) && ! empty( $plugins[$path] ) ) {
+						return $path;
+					}
+				}
+			}
+		}
+		return false;
 	}
 	/**
 	 * The unique identifier of this plugin.

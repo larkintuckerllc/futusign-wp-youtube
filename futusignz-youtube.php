@@ -7,7 +7,7 @@
  * @since            0.1.0
  * @package          futusign_youtube
  * @wordpress-plugin
- * Plugin Name:      futusign-youtube
+ * Plugin Name:      futusign Youtube
  * Plugin URI:       https://www.futusign.com
  * Description:      Add futusign Youtube media feature
  * Version:          0.1.0
