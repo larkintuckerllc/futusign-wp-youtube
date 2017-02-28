@@ -99,7 +99,7 @@
 	 */
 	public function restrict_manage_posts() {
 		global $typenow;
-		$post_type = 'futusign_youtube_video';
+		$post_type = 'futusign_yt_video';
 		$taxonomy_id = 'futusign_playlist';
 		if ($typenow != $post_type) {
 			return;
@@ -123,7 +123,7 @@
 	 */
 	public function parse_query($wp_query) {
 		global $pagenow;
-		$post_type = 'futusign_youtube_video';
+		$post_type = 'futusign_yt_video';
 		$taxonomy_id = 'futusign_playlist';
 		$q_vars = &$wp_query->query_vars;
 		if (

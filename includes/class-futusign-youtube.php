@@ -155,12 +155,12 @@ class Futusign_Youtube {
 		// YOUTUBE VIDEO
 		$youtube_video = $plugin_common->get_youtube_video();
 		$this->loader->add_action('init', $youtube_video, 'register');
+		$this->loader->add_filter('manage_futusign_yt_video_posts_custom_column', $youtube_video, 'manage_posts_custom_column', 10, 2 );
+		$this->loader->add_filter('manage_futusign_yt_video_posts_columns', $youtube_video, 'manage_posts_columns');
+		$this->loader->add_filter('restrict_manage_posts', $youtube_video, 'restrict_manage_posts');
+		$this->loader->add_filter('parse_query', $youtube_video, 'parse_query');
 		/*
 		$this->loader->add_filter('init', $screen, 'register_field_group');
-		$this->loader->add_filter('manage_futusign_screen_posts_custom_column', $screen, 'manage_posts_custom_column', 10, 2 );
-		$this->loader->add_filter('manage_futusign_screen_posts_columns', $screen, 'manage_posts_columns');
-		$this->loader->add_filter('restrict_manage_posts', $screen, 'restrict_manage_posts');
-		$this->loader->add_filter('parse_query', $screen, 'parse_query');
 		*/
 	}
 	/**
