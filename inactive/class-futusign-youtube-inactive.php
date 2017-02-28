@@ -23,4 +23,14 @@ class Futusign_Youtube_Inactive {
 	 */
 	public function __construct() {
 	}
+	/**
+	 * Display missing plugin dependency notices.
+	 *
+	 * @since    0.3.0
+	 */
+	public function missing_plugins_notice() {
+		if ( ! Futusign_Youtube::is_plugin_active( 'futusign' ) ) {
+			include plugin_dir_path( __FILE__ ) . 'partials/futusign-youtube-missing-futusign.php';
+		}
+	}
 }

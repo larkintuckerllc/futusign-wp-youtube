@@ -43,7 +43,7 @@ class Futusign_Youtube {
 		}
 		$paths = false;
 		if ( 'futusign' == $plugin ) {
-			$paths = array( 'futusign/class-futusign.php' );
+			$paths = array( 'futusign/futusign.php' );
 		}
 		if ( $paths ) {
 			$plugins = get_plugins();
@@ -142,6 +142,7 @@ class Futusign_Youtube {
 	 */
 	private function define_inactive_hooks() {
 		$plugin_inactive = new Futusign_Youtube_Inactive();
+		$this->loader->add_action('admin_notices', $plugin_inactive, 'missing_plugins_notice' );
 	}
 	/**
 	 * Register all of the common hooks of the plugin.
