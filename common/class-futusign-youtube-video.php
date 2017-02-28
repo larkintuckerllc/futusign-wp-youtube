@@ -10,13 +10,13 @@
  */
 /**
  * Define the youtube video functionality.
- *
+*
  * @since      0.1.0
  * @package    futusign_youtube
  * @subpackage futusign_youtube/common
  * @author     John Tucker <john@larkintuckerllc.com>
  */
- class Futusign_Youtube_Video {
+class Futusign_Youtube_Video {
 	/**
 	 * Initialize the class and set its properties.
 	 *
@@ -138,5 +138,74 @@
 		}
 		$term = get_term_by( 'id', $q_vars[$taxonomy_id], $taxonomy_id );
 		$q_vars[$taxonomy_id] = $term->slug;
+	}
+	/**
+	 * Define advanced custom fields for youtube video.
+	 *
+	 * @since    0.1.0
+	 */
+	// TODO: DEPRECATED REPLACE WITH ACF_ADD_LOCAL_FIELD_GROUP
+	public function register_field_group() {
+		if( function_exists( 'register_field_group' ) ) {
+			register_field_group(array (
+				'id' => 'acf_futusign_youtube_videos', // TODO: DEPRECATED
+				'key' => 'acf_futusign_youtube_videos',
+				'title' => 'futusign Youtube Videos',
+				'fields' => array (
+					array (
+						'key' => 'field_58b589305dc74',
+						'label' => __('Instructions', 'futusign_youtube'),
+						'name' => '',
+						'type' => 'message',
+						'message' => wp_kses(__( 'In addition to setting the <i>URL</i>, add the slide deck to one or more <i>Playlists</i> below.', 'futusign_youtube' ), array( 'i' => array() ) ),
+					),
+					array (
+						'key' => 'field_58b587c5b10eb',
+						'label' => 'URL',
+						'name' => 'url',
+						'type' => 'text',
+						'instructions' => esc_html__( 'The Uniform Resource Locator (URL) or address of the YouTube video.', 'futusign_youtube' ),
+						'required' => 1,
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+				),
+				'location' => array (
+					array (
+						array (
+							'param' => 'post_type',
+							'operator' => '==',
+							'value' => 'futusign_yt_video',
+							'order_no' => 0,
+							'group_no' => 0,
+						),
+					),
+				),
+				'options' => array (
+					'position' => 'normal',
+					'layout' => 'no_box',
+					'hide_on_screen' => array (
+						0 => 'permalink',
+						1 => 'the_content',
+						2 => 'excerpt',
+						3 => 'discussion',
+						4 => 'comments',
+						5 => 'revisions',
+						6 => 'slug',
+						7 => 'author',
+						8 => 'format',
+						9 => 'featured_image',
+						10 => 'categories',
+						11 => 'tags',
+						12 => 'send-trackbacks',
+					),
+				),
+				'menu_order' => 0,
+			));
+		}
 	}
 }
