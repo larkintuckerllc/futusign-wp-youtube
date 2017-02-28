@@ -7,10 +7,10 @@ Stable tag: 0.1.0
 License: Custom
 License URI: https://www.futusign.com/license
 
-Add futusign Youtube media feature
+Add futusign Youtube Videos feature
 
 == Description ==
-Add futusign Youtube media feature
+Add futusign Youtube Videos feature
 
 **See details at:** https://www.futusign.com
 

@@ -46,8 +46,9 @@ class Futusign_Youtube_Video {
 			array(
 				'labels' => $labels,
 				'public' => true,
-				'publicly_queryable' => true,
-				'rewrite' => array('slug' => 'fs-youtube-videos'),
+				'exclude_from_search' => false,
+				'publicly_queryable' => false,
+				'show_in_nav_menus' => false,
 				'has_archive' => false,
 				'show_in_rest' => true,
 				'rest_base' => 'fs-youtube-videos',

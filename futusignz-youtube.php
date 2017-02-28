@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:      futusign Youtube
  * Plugin URI:       https://www.futusign.com
- * Description:      Add futusign Youtube media feature
+ * Description:      Add futusign Youtube Videos feature
  * Version:          0.1.0
  * Author:           John Tucker
  * Author URI:       https://github.com/larkintuckerllc
