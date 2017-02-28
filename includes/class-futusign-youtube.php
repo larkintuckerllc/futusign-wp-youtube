@@ -129,6 +129,16 @@ class Futusign_Youtube {
 	 */
 	private function define_common_hooks() {
 		$plugin_common = new Futusign_Youtube_Common();
+		// YOUTUBE VIDEO
+		$youtube_video = $plugin_common->get_youtube_video();
+		$this->loader->add_action('init', $youtube_video, 'register');
+		/*
+		$this->loader->add_filter('init', $screen, 'register_field_group');
+		$this->loader->add_filter('manage_futusign_screen_posts_custom_column', $screen, 'manage_posts_custom_column', 10, 2 );
+		$this->loader->add_filter('manage_futusign_screen_posts_columns', $screen, 'manage_posts_columns');
+		$this->loader->add_filter('restrict_manage_posts', $screen, 'restrict_manage_posts');
+		$this->loader->add_filter('parse_query', $screen, 'parse_query');
+		*/
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality
