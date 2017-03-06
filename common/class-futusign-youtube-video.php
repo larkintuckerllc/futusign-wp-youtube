@@ -31,16 +31,16 @@ class Futusign_Youtube_Video {
 	 */
 	public function register() {
 		$labels = array(
-			'name' => __( 'Youtube Videos', 'futusign_youtube' ),
-			'singular_name' => __( 'Youtube Video', 'futusign_youtube' ),
+			'name' => __( 'YouTube Videos', 'futusign_youtube' ),
+			'singular_name' => __( 'YouTube Video', 'futusign_youtube' ),
 			'add_new' => __( 'Add New' , 'futusign_youtube' ),
-			'add_new_item' => __( 'Add New Youtube Video' , 'futusign_youtube' ),
-			'edit_item' =>  __( 'Edit Youtube Video' , 'futusign_youtube' ),
-			'new_item' => __( 'New Youtube Video' , 'futusign_youtube' ),
-			'view_item' => __('View Youtube Video', 'futusign_youtube'),
-			'search_items' => __('Search Youtube Videos', 'futusign_youtube'),
-			'not_found' =>  __('No Youtube Videos found', 'futusign_youtube'),
-			'not_found_in_trash' => __('No Youtube Videos found in Trash', 'futusign_youtube'),
+			'add_new_item' => __( 'Add New YouTube Video' , 'futusign_youtube' ),
+			'edit_item' =>  __( 'Edit YouTube Video' , 'futusign_youtube' ),
+			'new_item' => __( 'New YouTube Video' , 'futusign_youtube' ),
+			'view_item' => __('View YouTube Video', 'futusign_youtube'),
+			'search_items' => __('Search YouTube Videos', 'futusign_youtube'),
+			'not_found' =>  __('No YouTube Videos found', 'futusign_youtube'),
+			'not_found_in_trash' => __('No YouTube Videos found in Trash', 'futusign_youtube'),
 		);
 		register_post_type( 'futusign_yt_video', // ABBREVIATED FOR WP
 			array(
@@ -154,18 +154,18 @@ class Futusign_Youtube_Video {
 				'title' => 'futusign Youtube Videos',
 				'fields' => array (
 					array (
-						'key' => 'field_58b589305dc74',
+						'key' => 'field_acf_futusign_youtube_videos_instructions',
 						'label' => __('Instructions', 'futusign_youtube'),
 						'name' => '',
 						'type' => 'message',
-						'message' => wp_kses(__( 'In addition to setting the <i>URL</i>, add the slide deck to one or more <i>Playlists</i> below.', 'futusign_youtube' ), array( 'i' => array() ) ),
+						'message' => wp_kses(__( 'In addition to setting the <i>URL</i> and <i>Suggested Quality</i>, add the <i>YouTube Video</i> to one or more <i>Playlists</i> below.', 'futusign_youtube' ), array( 'i' => array() ) ),
 					),
 					array (
-						'key' => 'field_58b587c5b10eb',
+						'key' => 'field_acf_futusign_youtube_videos_url',
 						'label' => 'URL',
 						'name' => 'url',
 						'type' => 'text',
-						'instructions' => esc_html__( 'The Uniform Resource Locator (URL) or address of the YouTube video.', 'futusign_youtube' ),
+						'instructions' => wp_kses(__( 'The <i>share</i> Uniform Resource Locator (URL) or address of the YouTube video, e.g., <i>https://youtu.be/cmdFne7LnuA</i>.', 'futusign_youtube' ), array( 'i' => array() ) ),
 						'required' => 1,
 						'default_value' => '',
 						'placeholder' => '',
@@ -173,6 +173,26 @@ class Futusign_Youtube_Video {
 						'append' => '',
 						'formatting' => 'html',
 						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_acf_futusign_youtube_videos_suggested_quality',
+						'label' => 'Suggested Quality',
+						'name' => 'suggested_quality',
+						'type' => 'select',
+						'instructions' => wp_kses(__( 'The highest quality that the <i>YouTube Video</i> will play at; <i>default</i> will auto-select the quality.', 'futusign_youtube' ), array( 'i' => array() ) ),
+						'required' => 1,
+						'choices' => array (
+							'default' => 'default',
+							'highres' => 'highres',
+							'hd1080' => 'hd1080',
+							'hd720' => 'hd720',
+							'large' => 'large',
+							'medium' => 'medium',
+							'small' => 'small',
+						),
+						'default_value' => 'default',
+						'allow_null' => 0,
+						'multiple' => 0,
 					),
 				),
 				'location' => array (
