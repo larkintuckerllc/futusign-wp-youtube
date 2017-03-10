@@ -89,7 +89,7 @@ class Futusign_Youtube {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-youtube';
-		$this->version = '0.1.0';
+		$this->version = '0.1.1';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Youtube::is_plugin_active('all')) {

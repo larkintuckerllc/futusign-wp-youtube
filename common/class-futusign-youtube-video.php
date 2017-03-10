@@ -52,7 +52,7 @@ class Futusign_Youtube_Video {
 				'has_archive' => false,
 				'show_in_rest' => true,
 				'rest_base' => 'fs-youtube-videos',
-				'menu_icon' => 'dashicons-format-video',
+				'menu_icon' => plugins_url( 'img/youtube_video.png', __FILE__ )
 			)
 		);
 	}
@@ -115,6 +115,7 @@ class Futusign_Youtube_Video {
 			'selected' => $selected,
 			'show_count' => false,
 			'hide_empty' => false,
+			'hide_if_empty' => true,
 		) );
 	}
 	/**
@@ -151,7 +152,7 @@ class Futusign_Youtube_Video {
 			register_field_group(array (
 				'id' => 'acf_futusign_youtube_videos', // TODO: DEPRECATED
 				'key' => 'acf_futusign_youtube_videos',
-				'title' => 'futusign Youtube Videos',
+				'title' => 'futusign YouTube Videos',
 				'fields' => array (
 					array (
 						'key' => 'field_acf_futusign_youtube_videos_instructions',

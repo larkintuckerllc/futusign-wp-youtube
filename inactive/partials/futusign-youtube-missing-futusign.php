@@ -29,6 +29,6 @@ if ( current_user_can( 'install_plugins' ) ) {
 }
 ?>
 <div class="notice error is-dismissible">
-	<p><strong>futusign Youtube</strong> <?php esc_html_e('depends on the last version of futusign to work!', 'futusign_youtube' ); ?></p>
+	<p><strong>futusign YouTube</strong> <?php esc_html_e('depends on the last version of futusign to work!', 'futusign_youtube' ); ?></p>
 	<p><a href="<?php echo esc_url( $url ); ?>" class="button button-primary"<?php if ( $target ) : ?> target="_blank"<?php endif; ?>><?php echo esc_html( $action . ' futusign' ); ?></a></p>
 </div>

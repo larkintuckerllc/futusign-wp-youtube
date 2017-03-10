@@ -1,6 +1,6 @@
 futusignz-youtube
 ====
-Add futusign Youtube media feature
+Add futusign YouTube media feature
 
 https://www.futusign.com
 
