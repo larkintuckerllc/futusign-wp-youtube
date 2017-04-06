@@ -24,6 +24,5 @@ class Futusign_Youtube_Deactivator {
 	 * @since    0.1.0
 	 */
 	public static function deactivate() {
-		flush_rewrite_rules();
 	}
 }

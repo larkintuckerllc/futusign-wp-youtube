@@ -1,20 +1,20 @@
 {
     "name" : "futusign YouTube",
     "slug" : "futusignz-youtube",
-    "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-youtube-0-1-1.zip",
-    "version" : "0.1.1",
+    "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-youtube-0-1-2.zip",
+    "version" : "0.1.2",
     "author" : "John Tucker",
     "sections" : {
         "description" : "Add futusign YouTube Videos feature",
-        "installation": "<ul><li>Copy the <code>futusignz-youtube</code> into your<code>wp-content/plugins</code> folder</li><li>Activate the <code>futusignz-youtube</code> plugin via the plugin admin page</li></ul>",
-        "changelog" : "<p><b>0.1.1</b></p><p>Renaming Youtube to YouTube</p><p><b>0.1.0</b></p><p>Initial release</p>"
+        "installation": "Upload and activate the <code>futusignz-youtube</code> plugin via the plugin admin page",
+        "changelog" : "<p><b>0.1.2</b></p><p>Remove unnecessary flush rewrite.</p><p><b>0.1.1</b></p><p>Renaming Youtube to YouTube</p><p><b>0.1.0</b></p><p>Initial release</p>"
     },
     "homepage": "https://www.futusign.com",
     "requires": "4.3",
     "tested": "4.7",
     "author_homepage": "https://github.com/larkintuckerllc",
-    "last_updated": "2017-03-10 00:00:00",
-    "upgrade_notice": "Initial release",
+    "last_updated": "2017-04-06 00:00:00",
+    "upgrade_notice": "Remove unnecessary flush rewrite",
     "banners": {
       "low": "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/banner-772x250.jpg"
     }
