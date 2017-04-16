@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/admin
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The admin-specific functionality of the plugin.
  *

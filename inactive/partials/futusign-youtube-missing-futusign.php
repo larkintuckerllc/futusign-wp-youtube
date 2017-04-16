@@ -8,7 +8,6 @@
  * @package    futusign_youtube
  * @subpackage inactive/partials
  */
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

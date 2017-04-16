@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/includes
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Register all actions and filters for the plugin.
  *

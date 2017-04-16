@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/inactive
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The inactive functionality of the plugin.
  *

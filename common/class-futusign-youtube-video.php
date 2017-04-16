@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/common
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Define the youtube video functionality.
 *

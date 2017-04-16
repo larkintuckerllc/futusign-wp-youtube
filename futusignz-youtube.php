@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -10,7 +9,7 @@
  * Plugin Name:      futusign YouTube
  * Plugin URI:       https://www.futusign.com
  * Description:      Add futusign YouYube Videos feature
- * Version:          0.1.2
+ * Version:          0.1.3
  * Author:           John Tucker
  * Author URI:       https://github.com/larkintuckerllc
  * License:          Custom
@@ -18,7 +17,6 @@
  * Text Domain:      futusign-youtube
  * Domain Path:      /languages
  */
-
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }

@@ -9,6 +9,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/includes
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Fired during plugin deactiviation.
  *

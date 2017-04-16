@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/includes
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The core plugin class.
  *
@@ -89,7 +92,7 @@ class Futusign_Youtube {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-youtube';
-		$this->version = '0.1.2';
+		$this->version = '0.1.3';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Youtube::is_plugin_active('all')) {

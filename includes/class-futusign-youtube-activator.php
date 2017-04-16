@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin activation
  *
@@ -9,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/includes
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * Fired during plugin activation.
  *

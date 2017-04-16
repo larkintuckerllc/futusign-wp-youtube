@@ -8,6 +8,9 @@
  * @package    futusign_youtube
  * @subpackage futusign_youtube/public
  */
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
 /**
  * The public-specific functionality of the plugin.
  *
