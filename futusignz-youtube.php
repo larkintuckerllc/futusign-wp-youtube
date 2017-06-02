@@ -9,7 +9,7 @@
  * Plugin Name:      futusign YouTube
  * Plugin URI:       https://www.futusign.com
  * Description:      Add futusign YouYube Videos feature
- * Version:          0.1.3
+ * Version:          0.2.0
  * Author:           John Tucker
  * Author URI:       https://github.com/larkintuckerllc
  * License:          Custom

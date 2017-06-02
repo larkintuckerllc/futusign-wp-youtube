@@ -76,23 +76,38 @@ class Futusign_Youtube_Video {
 					echo join( ', ', wp_list_pluck( $playlists, 'name' ) );
 				}
 				break;
+			case 'overrides':
+				$overrides = get_the_terms( $post_id, 'futusign_override' );
+				if ($overrides == false) {
+					echo '';
+				} else {
+					echo join( ', ', wp_list_pluck( $overrides, 'name' ) );
+				}
+				break;
 		}
 	}
 	/**
-	 * Insert playlists column for a youtube video.
+	 * Insert playlists column for an web.
 	 *
 	 * @since    0.1.0
 	 * @param    array     $columns      The columns.
 	 */
-	public function manage_posts_columns($columns) {
+	public static function manage_posts_columns($columns) {
 		$i = array_search( 'title', array_keys( $columns ) ) + 1;
 		$columns_before = array_slice( $columns, 0, $i );
 		$columns_after = array_slice( $columns, $i );
+		$overrides = array();
+		if (class_exists( 'Futusign_Override' )) {
+			$overrides = array(
+				'overrides' => __('On Overrides', 'futusign')
+			);
+		}
 		return array_merge(
 			$columns_before,
 			array(
-				'playlists' => __('Subscribed Playlists', 'futusign_youtube')
+				'playlists' => __('On Playlists', 'futusign_web')
 			),
+			$overrides,
 			$columns_after
 		);
 	}
@@ -122,6 +137,34 @@ class Futusign_Youtube_Video {
 		) );
 	}
 	/**
+	 * Build filter admin selection for overide
+	 *
+	 * @since    0.2.0
+	 */
+	public function restrict_manage_posts_override() {
+		if (! class_exists( 'Futusign_Override' )) {
+			return;
+		}
+		global $typenow;
+		$post_type = 'futusign_yt_video';
+		$taxonomy_id = 'futusign_override';
+		if ($typenow != $post_type) {
+			return;
+		}
+		$selected = isset( $_GET[$taxonomy_id] ) ? $_GET[$taxonomy_id] : '';
+		$taxonomy = get_taxonomy( $taxonomy_id );
+		wp_dropdown_categories( array(
+			'show_option_all' =>  __( 'Show All', 'futusign' ) . ' ' . $taxonomy->label,
+			'taxonomy' => $taxonomy_id,
+			'name' => $taxonomy_id,
+			'orderby' => 'name',
+			'selected' => $selected,
+			'show_count' => false,
+			'hide_empty' => false,
+			'hide_if_empty' => true,
+		) );
+	}
+	/**
 	 * Convert query playlists variables from ids to slugs
 	 *
 	 * @since    0.1.0
@@ -130,6 +173,32 @@ class Futusign_Youtube_Video {
 		global $pagenow;
 		$post_type = 'futusign_yt_video';
 		$taxonomy_id = 'futusign_playlist';
+		$q_vars = &$wp_query->query_vars;
+		if (
+			$pagenow != 'edit.php' ||
+			!isset( $q_vars['post_type'] ) ||
+			$q_vars['post_type'] !== $post_type ||
+			!isset( $q_vars[$taxonomy_id] ) ||
+			!is_numeric( $q_vars[$taxonomy_id] ) ||
+			$q_vars[$taxonomy_id] == 0
+		) {
+			return;
+		}
+		$term = get_term_by( 'id', $q_vars[$taxonomy_id], $taxonomy_id );
+		$q_vars[$taxonomy_id] = $term->slug;
+	}
+	/**
+	 * Convert query playlists variables from ids to slugs - override
+	 *
+	 * @since    0.2.0
+	 */
+	public function parse_query_override($wp_query) {
+		if (! class_exists( 'Futusign_Override' )) {
+			return;
+		}
+		global $pagenow;
+		$post_type = 'futusign_yt_video';
+		$taxonomy_id = 'futusign_override';
 		$q_vars = &$wp_query->query_vars;
 		if (
 			$pagenow != 'edit.php' ||

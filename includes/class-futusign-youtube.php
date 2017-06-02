@@ -30,7 +30,7 @@ class Futusign_Youtube {
 		if ( 'futusign' == $plugin ) {
 			return class_exists( 'Futusign' );
 		} elseif ( 'all' == $plugin ) {
-			return class_exists( 'WP_REST_Controller' ) && class_exists( 'acf' ) && class_exists( 'ACF_TO_REST_API' ) && class_exists( 'Futusign' );
+			return class_exists( 'acf' ) && class_exists( 'Futusign' );
 		}
 		return false;
 	}
@@ -92,7 +92,7 @@ class Futusign_Youtube {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-youtube';
-		$this->version = '0.1.3';
+		$this->version = '0.2.0';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Youtube::is_plugin_active('all')) {
@@ -158,11 +158,14 @@ class Futusign_Youtube {
 		// YOUTUBE VIDEO
 		$youtube_video = $plugin_common->get_youtube_video();
 		$this->loader->add_action('init', $youtube_video, 'register');
-		$this->loader->add_filter('init', $youtube_video, 'register_field_group');
-		$this->loader->add_filter('manage_futusign_yt_video_posts_custom_column', $youtube_video, 'manage_posts_custom_column', 10, 2 );
+		$this->loader->add_action('init', $youtube_video, 'register_field_group');
+		$this->loader->add_action('manage_futusign_yt_video_posts_custom_column', $youtube_video, 'manage_posts_custom_column', 10, 2 );
 		$this->loader->add_filter('manage_futusign_yt_video_posts_columns', $youtube_video, 'manage_posts_columns');
-		$this->loader->add_filter('restrict_manage_posts', $youtube_video, 'restrict_manage_posts');
-		$this->loader->add_filter('parse_query', $youtube_video, 'parse_query');
+		$this->loader->add_action('restrict_manage_posts', $youtube_video, 'restrict_manage_posts');
+		$this->loader->add_action('parse_query', $youtube_video, 'parse_query');
+		// YOUTUBE VIDEO - OVERRIDE
+		$this->loader->add_action('restrict_manage_posts', $youtube_video, 'restrict_manage_posts_override');
+		$this->loader->add_action('parse_query', $youtube_video, 'parse_query_override');
 	}
 	/**
 	 * Register all of the hooks related to the admin area functionality
