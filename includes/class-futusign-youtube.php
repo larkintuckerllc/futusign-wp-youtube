@@ -92,7 +92,7 @@ class Futusign_Youtube {
 	 */
 	public function __construct() {
 		$this->plugin_name = 'futusign-youtube';
-		$this->version = '0.2.0';
+		$this->version = '0.3.0';
 		$this->load_dependencies();
 		$this->set_locale();
 		if (Futusign_Youtube::is_plugin_active('all')) {
@@ -176,6 +176,7 @@ class Futusign_Youtube {
 	 */
 	private function define_admin_hooks() {
 		$plugin_admin = new Futusign_Youtube_Admin();
+		$this->loader->add_filter( 'wp_link_query_args', $plugin_admin, 'wp_link_query_args' );
 	}
 	/**
 	 * Register all of the hooks related to the public-facing functionality

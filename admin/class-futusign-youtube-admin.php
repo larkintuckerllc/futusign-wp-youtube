@@ -26,4 +26,17 @@ class Futusign_Youtube_Admin {
 	 */
 	public function __construct() {
 	}
+	/**
+	 * filter link builder
+	 *
+	 * @since    0.3.0
+	 * @param    array      $query     query
+	 * @return   array      filtered query
+	 */
+	public function wp_link_query_args( $query ) {
+		$cpt_to_remove = 'futusign_yt_video';
+		$key = array_search( $cpt_to_remove, $query['post_type'] );
+		if( $key ) unset( $query['post_type'][$key] );
+		return $query;
+	}
 }
