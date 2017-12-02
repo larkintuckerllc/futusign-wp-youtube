@@ -2,19 +2,19 @@
     "name" : "futusign YouTube",
     "slug" : "futusignz-youtube",
     "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-youtube-0-3-0.zip",
-    "version" : "0.3.0",
+    "version" : "0.4.0",
     "author" : "John Tucker",
     "sections" : {
         "description" : "Add futusign YouTube Videos feature",
         "installation": "Upload and activate the <code>futusignz-youtube</code> plugin via the plugin admin page",
-        "changelog" : "<p><b>0.3.0</b></p><p>filter link builder</p><p><b>0.2.0</b></p><p>Remove dep. on ACF to REST API</p><p><b>0.1.3</b></p><p>Security upgrade; harden PHP</p><p><b>0.1.2</b></p><p>Remove unnecessary flush rewrite.</p><p><b>0.1.1</b></p><p>Renaming Youtube to YouTube</p><p><b>0.1.0</b></p><p>Initial release</p>"
+        "changelog" : "<p><b>0.4.0</b></p><p>Validate YouTube Share URL</p><p><b>0.3.0</b></p><p>filter link builder</p><p><b>0.2.0</b></p><p>Remove dep. on ACF to REST API</p><p><b>0.1.3</b></p><p>Security upgrade; harden PHP</p><p><b>0.1.2</b></p><p>Remove unnecessary flush rewrite.</p><p><b>0.1.1</b></p><p>Renaming Youtube to YouTube</p><p><b>0.1.0</b></p><p>Initial release</p>"
     },
     "homepage": "https://www.futusign.com",
     "requires": "4.3",
-    "tested": "4.8",
+    "tested": "4.9",
     "author_homepage": "https://github.com/larkintuckerllc",
-    "last_updated": "2017-07-31 00:00:00",
-    "upgrade_notice": "filter link builder",
+    "last_updated": "2017-12-02 00:00:00",
+    "upgrade_notice": "Validate YouTube Share URL",
     "banners": {
       "low": "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/banner-772x250.jpg"
     }
