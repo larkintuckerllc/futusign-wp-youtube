@@ -163,6 +163,7 @@ class Futusign_Youtube {
 		$this->loader->add_filter('manage_futusign_yt_video_posts_columns', $youtube_video, 'manage_posts_columns');
 		$this->loader->add_action('restrict_manage_posts', $youtube_video, 'restrict_manage_posts');
 		$this->loader->add_action('parse_query', $youtube_video, 'parse_query');
+		$this->loader->add_filter( 'acf/validate_value/key=field_acf_futusign_youtube_videos_url', $youtube_video, 'acf_validate_value_field_acf_futusign_youtube_videos_url', 10, 2 );
 		// YOUTUBE VIDEO - OVERRIDE
 		$this->loader->add_action('restrict_manage_posts', $youtube_video, 'restrict_manage_posts_override');
 		$this->loader->add_action('parse_query', $youtube_video, 'parse_query_override');

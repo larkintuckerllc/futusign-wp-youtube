@@ -302,4 +302,16 @@ class Futusign_Youtube_Video {
 			));
 		}
 	}
+	/**
+	 * Validate ACF Field for YouTube Share URL
+	 *
+	 * @since    0.4.0
+	 * @param    Boolean $valid      Current validity
+	 * @param    Boolean $value      Current value
+	 */
+	public function acf_validate_value_field_acf_futusign_youtube_videos_url( $valid, $value ) {
+		if ( !$valid ) return false;
+		if ( preg_match ( '/^https:\/\/youtu\.be\/.+/' , $value ) === 1 ) return true;
+		return 'Invalid YouTube share Uniform Resource Locator (URL)';
+  }
 }
