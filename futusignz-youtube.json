@@ -1,7 +1,7 @@
 {
     "name" : "futusign YouTube",
     "slug" : "futusignz-youtube",
-    "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-youtube-0-3-0.zip",
+    "download_url" : "http://futusign-wordpress.s3-website-us-east-1.amazonaws.com/futusignz-youtube-0-4-0.zip",
     "version" : "0.4.0",
     "author" : "John Tucker",
     "sections" : {
