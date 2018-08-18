@@ -17,7 +17,7 @@ A plugin that adds support for displaying YouTube videos.
 Installation
 ====
 
-The latest plugin is available for download from the *Releases* tab.
+The latest plugin is available for download from the *release* tab.
 
 Upload and activate the plugin via the WordPress Plugins admin screen.
 
