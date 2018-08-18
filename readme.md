@@ -1,4 +1,4 @@
-futusign
+futusign YouTube Video
 ====
 Manage and display digital signage content
 
@@ -12,7 +12,7 @@ Manage and display digital signage content
 Description
 ===
 
-TODO: 
+A plugin that adds support for displaying YouTube videos.
 
 Installation
 ====
