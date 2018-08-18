@@ -1,6 +1,6 @@
 futusign YouTube Video
 ====
-Manage and display digital signage content
+Support for YouTube videos with futusign
 
 - [Description](#description)
 - [Installation](#installation)
