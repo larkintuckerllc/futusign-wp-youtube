@@ -12,7 +12,7 @@ Support for YouTube videos with futusign
 Description
 ===
 
-A plugin that adds support for displaying YouTube videos with the (futusign)[https://github.com/larkintuckerllc/futusign-wordpress]
+A plugin that adds support for displaying YouTube videos with the [futusign](https://github.com/larkintuckerllc/futusign-wordpress)
 digital signage management software.
 
 Installation
