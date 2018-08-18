@@ -12,7 +12,8 @@ Manage and display digital signage content
 Description
 ===
 
-A plugin that adds support for displaying YouTube videos.
+A plugin that adds support for displaying YouTube videos with the (futusign)[https://github.com/larkintuckerllc/futusign-wordpress]
+digital signage management software.
 
 Installation
 ====
